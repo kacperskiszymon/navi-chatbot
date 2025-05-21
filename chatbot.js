@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
   chatBox.innerHTML = `
     <div id="navi-header">Cześć, tu Navi!</div>
     <div id="navi-body">
-      <div id="navi-log"></div>
+      <div id="navi-log" style="overflow-y: auto; max-height: 260px;"></div>
       <input type="text" id="navi-input" placeholder="Zadaj pytanie..." />
     </div>
   `;
