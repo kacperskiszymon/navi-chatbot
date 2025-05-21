@@ -1,5 +1,3 @@
-// chatbot.js
-
 document.addEventListener("DOMContentLoaded", function () {
   const botButton = document.createElement("div");
   botButton.innerHTML = "🤖";
@@ -32,7 +30,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const response = await getResponse(input);
       log.innerHTML += `<div class="bot-msg">${response}</div>`;
-      log.scrollTop = log.scrollHeight;
+
+      // ⬇️ Automatyczne przewinięcie po dodaniu wiadomości
+      setTimeout(() => {
+        log.scrollTop = log.scrollHeight;
+      }, 100);
     }
   });
 });
