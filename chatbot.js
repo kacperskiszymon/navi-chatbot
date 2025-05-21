@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 async function getResponse(userMsg) {
   try {
-    const res = await fetch("http://localhost:5000/chat", {
+    const res = await fetch("https://navi-chatbot-1.onrender.com/chat", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ message: userMsg })
