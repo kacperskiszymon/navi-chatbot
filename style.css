@@ -1,0 +1,121 @@
+/* Globalna czcionka Inter */
+body, input, #navi-box, #navi-header {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Przycisk Navi (kółko) */
+#navi-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  padding: 12px;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+  z-index: 9999;
+}
+
+#navi-button:hover {
+  transform: scale(1.1);
+}
+
+/* Chatbox główny */
+#navi-box {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 340px;
+  max-height: 460px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+  overflow: hidden;
+  animation: slideUp 0.3s ease;
+  z-index: 9999;
+}
+
+/* Animacja pojawienia się */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#navi-box.navi-open {
+  display: flex;
+}
+
+/* Nagłówek czatu */
+#navi-header {
+  background: #f0f0f0;
+  padding: 14px 16px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #222;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Obszar rozmowy i input */
+#navi-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+}
+
+/* Historia wiadomości */
+#navi-log {
+  flex: 1;
+  overflow-y: auto;
+  font-size: 14px;
+  margin-bottom: 12px;
+  scroll-behavior: smooth;
+}
+
+/* Pole do wpisywania */
+#navi-input {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 14px;
+  outline: none;
+  transition: border 0.2s ease;
+}
+
+#navi-input:focus {
+  border-color: #007bff;
+}
+
+/* Styl wiadomości */
+.user-msg {
+  text-align: right;
+  background: #e8f0fe;
+  color: #333;
+  padding: 6px 10px;
+  border-radius: 8px;
+  margin: 4px 0;
+  display: inline-block;
+  max-width: 90%;
+}
+
+.bot-msg {
+  text-align: left;
+  background: #f1f1f1;
+  color: #000;
+  padding: 6px 10px;
+  border-radius: 8px;
+  margin: 4px 0;
+  display: inline-block;
+  max-width: 90%;
+}
